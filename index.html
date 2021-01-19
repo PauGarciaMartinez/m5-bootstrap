@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style="margin: 0;">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -16,55 +17,272 @@
         <title>Bootstrap Page</title>
     </head>
 
-    <body>
-        
-        <header class="container-fluid">
-            <h1>The Book Store</h1>
+    <body style="margin: 0;">
+
+        <!--HEADER-->
+        <header class="container-fluid bg-secondary text-white text-center p-4">
+            <h1 class="display-4">The Book Store</h1>
             <p>Come find your new reading adventure</p>
         </header>
 
-        <nav class="nav">
-            <ul class="nav-menu">
-                <li class="nav-link">Home</li>
-                <li class="nav-link">Catalog</li>
-                <li class="nav-link">Store</li>
-                <li class="nav-link">Blog</li>
-                <li class="nav-link">Contact</li>
-            </ul>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+            
+          <!--Logo-->
+            <a class="navbar-brand" href="#">
+              <i class="fas fa-book p-3" style="font-size: 2rem;"></i>
+            </a>
+
+            <!--Collapse button-->
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Nav menu-->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Catalog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Store</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+            </div>
+
+            <!--SEARCH BAR-->
+            <form class="form-inline" action="#">
+                <input class="form-control mr-sm-2 w-50" type="text" placeholder="Search">
+                <button class="btn btn-success ml-1" type="submit">Search</button>
+            </form>
+
+            <!--MODAL BUTTON TO SIGN IN-->
+            <button type="button" class="btn btn-primary ml-3 mr-1" data-toggle="modal" data-target="#signIn">Sign in</button>
+            <div class="modal" data-backdrop="false" id="signIn">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body"> 
+                    <!--Form to sign in-->
+                    <form action="/action_page.php">
+                      <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" placeholder="Enter email" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                      </div>
+                      <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox"> Remember me
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--MODAL BUTTON TO SIGN UP-->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUp">Sign up</button>
+            <div class="modal" data-backdrop="false" id="signUp">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Sign up</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body"> 
+                    <!--Form to sign up-->
+                    <form action="#">
+                      <div class="form-group">
+                        <label for="email">Set you email address:</label>
+                        <input type="email" class="form-control" placeholder="Enter email" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Set a new password:</label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                      </div>
+                      <div class="form-group form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox">I accept the Privacy Terms
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </nav>
 
+        <!--BEST SELLERS SECTION-->
         <section class="row">
             <article class="col-sm-12">
 
+              <!--CAROUSEL-->
+              <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!--Indicators-->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                  <li data-target="#demo" data-slide-to="3"></li>
+                </ul>
+              
+                <!--The slideshow-->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/book3.jpg" class="img-fluid w-100" alt="Books">
+                    <div class="carousel-caption">
+                      <h3>Lorem Ipsum</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/book4.jpg" class="img-fluid w-100" alt="Books">
+                    <div class="carousel-caption">
+                      <h3>Lorem Ipsum</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/book5.jpg" class="img-fluid w-100" alt="Books">
+                    <div class="carousel-caption">
+                      <h3>Lorem Ipsum</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/book6.jpg" class="img-fluid w-100" alt="Books">
+                    <div class="carousel-caption">
+                      <h3>Lorem Ipsum</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                  </div>
+                </div>
+              
+                <!--Left and right controls-->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              
+              </div>
             </article>
         </section>
 
-        <section class="row">
-            <article class="col-sm-4">
+        <!--NEW RELEASES SECTION-->
+        <section class="container-fluid bg-dark p-5">
+          <h2 class="text-white text-center pb-5">New releases</h2>
+          <div class="row">
+              <article class="col mb-3 d-flex justify-content-center">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="img/book2.jpg" alt="Book">
+                  <div class="card-body">
+                    <h4 class="card-title">Lorem Ipsum</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias recusandae assumenda dicta id in eveniet quasi inventore molestias, officiis dolorum culpa incidunt natus maiores quae possimus quibusdam dolorem facilis?</p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                  </div>
+                </div>
+              </article>
+              <article class="col mb-3 d-flex justify-content-center">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="img/book2.jpg" alt="Book">
+                  <div class="card-body">
+                    <h4 class="card-title">Lorem Ipsum</h4>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, laboriosam minima deserunt earum atque nobis dolor numquam provident corrupti eligendi necessitatibus cumque vel ea harum modi maiores sunt iure. Porro.</p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                  </div>
+                </div>
+              </article>
+              <article class="col mb-3 d-flex justify-content-center">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="img/book2.jpg" alt="Book">
+                  <div class="card-body">
+                    <h4 class="card-title">Lorem Ipsum</h4>
+                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam aliquam nulla harum veniam maxime fuga odit, saepe ea voluptate inventore impedit eveniet hic facilis, corporis minima. Assumenda deleniti repellendus sit.
+                    </p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                  </div>
+                </div>
+              </article>
+              <article class="col mb-3 d-flex justify-content-center">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="img/book2.jpg" alt="Book">
+                  <div class="card-body">
+                    <h4 class="card-title">Lorem Ipsum</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod facere veritatis quam eum, maxime dolorem perferendis totam odit, ducimus fuga repellendus dolorum ratione nulla nostrum eius! Facere nobis consectetur sapiente.</p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
 
+        <!--WE RECOMMEND SECTION-->
+        <section class="container-fluid p-5">
+          <h2 class="text-center pb-5">We recommend</h2>
+          <div class="row">
+            <article class="col-md-4 mb-2 d-flex flex-wrap justify-content-center">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img/book1.jpg" alt="Book">
+                <div class="card-body">
+                  <h4 class="card-title">Lorem Ipsum</h4>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet distinctio libero doloremque eius quae doloribus vero dolorem tempore rerum saepe enim optio incidunt repellat esse, voluptatum, expedita natus quam autem.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
             </article>
-            <article class="col-sm-4">
-
+            <article class="col-md-4 mb-2 d-flex flex-wrap justify-content-center">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img/book1.jpg" alt="Book">
+                <div class="card-body">
+                  <h4 class="card-title">Lorem Ipsum</h4>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet distinctio libero doloremque eius quae doloribus vero dolorem tempore rerum saepe enim optio incidunt repellat esse, voluptatum, expedita natus quam autem.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
             </article>
-            <article class="col-sm-4">
-
+            <article class="col-md-4 d-flex flex-wrap justify-content-center">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="img/book1.jpg" alt="Book">
+                <div class="card-body">
+                  <h4 class="card-title">Lorem Ipsum</h4>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet distinctio libero doloremque eius quae doloribus vero dolorem tempore rerum saepe enim optio incidunt repellat esse, voluptatum, expedita natus quam autem.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
             </article>
+          </div>
         </section>
 
-        <section class="row">
-            <article class="col-sm-4">
-
-            </article>
-            <article class="col-sm-4">
-
-            </article>
-            <article class="col-sm-4">
-
-            </article>
-        </section>
-
-        <footer class="container-fluid">
-
+        <footer class="container-fluid bg-secondary p-5 text-white">
+          <h4>Contact us</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
         </footer>
         
     </body>
